@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>挥动 菜单</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 250px;
+      font: 13px/1.4 -apple-system, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: #1d1d1f;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #2b2b2b; color: #f2f2f2; }
+      .item:hover { background: rgba(255,255,255,.10) !important; }
+      .state { color: #aaa !important; }
+      .sep { background: rgba(255,255,255,.14) !important; }
+      select { background: #3a3a3a !important; color: #f2f2f2 !important; border-color: #555 !important; }
+      .section-title { color: #9aa0ff !important; }
+    }
+    .item {
+      display: block;
+      width: 100%;
+      padding: 11px 16px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .item:hover { background: rgba(0,0,0,.07); }
+    .item:active { background: rgba(0,0,0,.12); }
+    .sep { height: 1px; margin: 4px 8px; background: rgba(0,0,0,.12); }
+    .state { padding: 2px 16px 8px; font-size: 11px; color: #777; }
+    .section-title {
+      padding: 8px 16px 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b4fd8;
+      letter-spacing: .03em;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px 16px;
+    }
+    .row label { flex: 0 0 auto; }
+    select {
+      flex: 1 1 auto;
+      max-width: 140px;
+      padding: 4px 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .switch {
+      position: relative;
+      width: 34px; height: 20px;
+      flex: 0 0 auto;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #bbb; border-radius: 20px;
+      transition: .15s; cursor: pointer;
+    }
+    .slider::before {
+      content: ""; position: absolute;
+      width: 14px; height: 14px; left: 3px; top: 3px;
+      background: #fff; border-radius: 50%; transition: .15s;
+    }
+    .switch input:checked + .slider { background: #6b4fd8; }
+    .switch input:checked + .slider::before { transform: translateX(14px); }
+    .hint { padding: 2px 16px 8px; font-size: 10px; color: #999; }
+  </style>
+</head>
+<body>
+  <button class="item" id="toggle">暂时禁用手势</button>
+  <button class="item" id="settings">打开设置</button>
+  <div class="state" id="state"></div>
+
+  <div class="sep"></div>
+  <div class="section-title">框选链接（Snap Links）</div>
+  <div class="row">
+    <label for="lsEnabled">启用框选</label>
+    <span class="switch">
+      <input type="checkbox" id="lsEnabled">
+      <span class="slider"></span>
+    </span>
+  </div>
+  <div class="row">
+    <label for="lsModifier">触发键</label>
+    <select id="lsModifier">
+      <option value="ctrlKey">Ctrl + 左键拖拽</option>
+      <option value="altKey">Alt + 左键拖拽</option>
+      <option value="shiftKey">Shift + 左键拖拽</option>
+    </select>
+  </div>
+  <div class="row">
+    <label for="lsMode">打开方式</label>
+    <select id="lsMode">
+      <option value="background">后台新标签</option>
+      <option value="foreground">前台新标签</option>
+      <option value="window">新窗口</option>
+      <option value="copy">复制链接</option>
+    </select>
+  </div>
+  <div class="hint">按住触发键拖动鼠标框选，松开后批量处理框中链接</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
