@@ -6,6 +6,7 @@ const LS_SUBJECT = "gfSetLinkSelector";
 const LS_DEFAULTS = { enabled: true, modifier: "ctrlKey", mode: "background" };
 
 const gestureEnabled = document.getElementById("gestureEnabled");
+const gestureMouseButton = document.getElementById("gestureMouseButton");
 const settingsButton = document.getElementById("settings");
 const stateLabel = document.getElementById("state");
 const lsEnabled = document.getElementById("lsEnabled");
@@ -15,6 +16,19 @@ const lsMode = document.getElementById("lsMode");
 async function isDisabled () {
   const result = await browser.storage.local.get(STORAGE_KEY);
   return Boolean(result[STORAGE_KEY]);
+}
+
+async function getGestureMouseButton () {
+  const result = await browser.storage.local.get("Settings");
+  const button = result.Settings?.Gesture?.mouseButton;
+  return [0, 1, 2].includes(button) ? button : 2;
+}
+
+async function setGestureMouseButton (value) {
+  const result = await browser.storage.local.get("Settings");
+  const settings = result.Settings || {};
+  settings.Gesture = { ...(settings.Gesture || {}), mouseButton: Number(value) };
+  await browser.storage.local.set({ Settings: settings });
 }
 
 async function getLsConfig () {
@@ -37,9 +51,10 @@ async function broadcastConfig (subject, data) {
 async function refresh () {
   const disabled = await isDisabled();
   gestureEnabled.checked = !disabled;
-  stateLabel.textContent = disabled
-    ? "当前：已禁用（手势轨迹与动作均关闭）"
-    : "当前：手势已启用";
+  stateLabel.textContent = disabled ? "当前：已禁用（手势轨迹与动作均关闭）" : "";
+  stateLabel.hidden = !disabled;
+
+  gestureMouseButton.value = String(await getGestureMouseButton());
 
   const cfg = await getLsConfig();
   lsEnabled.checked = Boolean(cfg.enabled);
@@ -52,9 +67,12 @@ gestureEnabled.addEventListener("change", async () => {
   const disabled = !gestureEnabled.checked;
   await browser.storage.local.set({ [STORAGE_KEY]: disabled });
   await broadcastConfig(SUBJECT, disabled);
-  stateLabel.textContent = disabled
-    ? "当前：已禁用（手势轨迹与动作均关闭）"
-    : "当前：手势已启用";
+  stateLabel.textContent = disabled ? "当前：已禁用（手势轨迹与动作均关闭）" : "";
+  stateLabel.hidden = !disabled;
+});
+
+gestureMouseButton.addEventListener("change", () => {
+  setGestureMouseButton(gestureMouseButton.value);
 });
 
 settingsButton.addEventListener("click", () => {

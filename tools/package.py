@@ -25,8 +25,8 @@ def iter_files(base):
             yield path, rel
 
 
-XPI_OUT = ROOT / "huidong-1.2-menu.xpi"
-SOURCE_OUT = ROOT / "huidong-1.2-menu-source.zip"
+XPI_OUT = ROOT / "huidong-1.2-trigger.xpi"
+SOURCE_OUT = ROOT / "huidong-1.2-trigger-source.zip"
 
 
 def atomic_zip(out_path, builder):
@@ -62,6 +62,7 @@ def verify():
         bg = z.read("core/background.mjs").decode("utf-8")
         about = z.read("views/options/fragments/about.inc").decode("utf-8")
         popup = z.read("popup.html").decode("utf-8")
+        js = z.read("popup.js").decode("utf-8")
         assert manifest["name"] == "挥动", manifest["name"]
         assert manifest["version"] == "1.2", manifest["version"]
         assert manifest["browser_specific_settings"]["gecko"]["id"] == "ksmao.work@outlook.com"
@@ -73,11 +74,14 @@ def verify():
         assert "Snap Links Plus" in about and "Gesturefy" in about, "thanks text missing"
         assert "启用框选链接" in popup, "new popup label missing"
         assert "框选链接（Snap Links）" not in popup and "按住触发键拖动鼠标框选" not in popup, "old popup text still present"
+        assert "gestureMouseButton" in popup and "gestureMouseButton" in js, "gesture trigger select missing"
+        assert "当前：手势已启用" not in js, "old state text still present"
         print("XPI:", xpi.stat().st_size, "bytes |", len(names), "entries")
         print("name/ver:", manifest["name"], manifest["version"])
         print("welcome trigger removed:", "views/installation/index.html" not in bg)
         print("changelog link -> huidong:", "https://github.com/highwindmx/huidong/releases" in bg)
         print("popup labels updated:", "启用框选链接" in popup)
+        print("gesture trigger select:", "gestureMouseButton" in popup)
         print("thanks in about:", "Snap Links Plus" in about)
     print("source zip:", src.stat().st_size, "bytes")
 
