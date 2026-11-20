@@ -25,8 +25,8 @@ def iter_files(base):
             yield path, rel
 
 
-XPI_OUT = ROOT / "huidong-1.2.xpi"
-SOURCE_OUT = ROOT / "huidong-1.2-source.zip"
+XPI_OUT = ROOT / "huidong-1.2-final.xpi"
+SOURCE_OUT = ROOT / "huidong-1.2-final-source.zip"
 
 
 def atomic_zip(out_path, builder):
@@ -67,12 +67,13 @@ def verify():
         assert not any(n == "mozilla-recommendation.json" or n.startswith("META-INF/") for n in names)
         assert "views/installation/index.html" not in bg, "welcome tab trigger still present"
         assert "browser.browserSettings.contextMenuShowEvent.set" in bg, "context-menu setup missing"
-        assert "updateNotification" not in bg, "update notification logic still present"
+        assert "https://github.com/highwindmx/huidong/releases" in bg, "changelog link not updated"
+        assert "Robbendebiene/Gesturefy/releases" not in bg, "old changelog link still present"
         assert "Snap Links Plus" in about and "Gesturefy" in about, "thanks text missing"
         print("XPI:", xpi.stat().st_size, "bytes |", len(names), "entries")
         print("name/ver:", manifest["name"], manifest["version"])
         print("welcome trigger removed:", "views/installation/index.html" not in bg)
-        print("update notification removed:", "updateNotification" not in bg)
+        print("changelog link -> huidong:", "https://github.com/highwindmx/huidong/releases" in bg)
         print("thanks in about:", "Snap Links Plus" in about)
     print("source zip:", src.stat().st_size, "bytes")
 

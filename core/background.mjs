@@ -216,13 +216,25 @@ browser.storage.onChanged.addListener((changes, area) => {
 /**
  * Listen for addon installation and update
  * Enable context menu on mouseup
- * Huidong fork: no welcome tab and no update notification
+ * Huidong fork: no welcome tab; update notification links to this repo's releases
  **/
-browser.runtime.onInstalled.addListener(() => {
+browser.runtime.onInstalled.addListener((details) => {
   try {
     browser.browserSettings.contextMenuShowEvent.set({value: "mouseup"});
   }
   catch (error) {
     console.warn("Huidong was not able to change the context menu behaviour to mouseup.", error);
   }
+
+  // run this code after the config is loaded
+  Config.loaded.then(() => {
+    if (details.reason === "update" && Config.get("Settings.General.updateNotification")) {
+      const manifest = browser.runtime.getManifest();
+      displayNotification(
+        browser.i18n.getMessage('addonUpdateNotificationTitle', manifest.name),
+        browser.i18n.getMessage('addonUpdateNotificationMessage', manifest.version),
+        "https://github.com/highwindmx/huidong/releases"
+      );
+    }
+  });
 });
