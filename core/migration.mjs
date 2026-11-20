@@ -20,7 +20,7 @@ browser.runtime.onInstalled.addListener(async (details) => {
       // migrate trace settings
       const traceStyle = Config.get("Settings.Gesture.Trace.Style");
       if (traceStyle && traceStyle.strokeStyle && traceStyle.strokeStyle.length < 9) {
-        traceStyle.strokeStyle = traceStyle.strokeStyle ? traceStyle.strokeStyle : "#00aaa0";
+        traceStyle.strokeStyle = traceStyle.strokeStyle ? traceStyle.strokeStyle : "#6b4fd8";
         if ("opacity" in traceStyle) {
           let aHex = Math.round(traceStyle.opacity * 255).toString(16);
           // add leading zero if string length is 1

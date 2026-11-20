@@ -89,7 +89,7 @@ function onPageNavigation () {
     nextItem.classList.add("active");
     // update document title
     const sectionKey = nextItem.querySelector("[data-i18n]").dataset.i18n;
-    document.title = `Gesturefy - ${browser.i18n.getMessage(sectionKey)}`;
+    document.title = `挥动 - ${browser.i18n.getMessage(sectionKey)}`;
   }
 }
 

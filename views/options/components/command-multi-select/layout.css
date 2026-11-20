@@ -15,8 +15,8 @@
 #dropdown::slotted(*:hover),
 #dropdown::slotted(*:focus-visible) {
   color: var(--textSecond-color);
-  background-color: var(--highlighted-color, #00AAA0);
-  border-color: var(--highlighted-color, #00AAA0);
+  background-color: var(--highlighted-color, #6B4FD8);
+  border-color: var(--highlighted-color, #6B4FD8);
 }
 
 .item.dragged::before {
@@ -153,8 +153,8 @@ a[target="_blank"]::after {
 }
 
 .toggle-button:checked {
-  border-color: var(--highlighted-color, #00AAA0);
-  background: var(--highlighted-color, #00AAA0);
+  border-color: var(--highlighted-color, #6B4FD8);
+  background: var(--highlighted-color, #6B4FD8);
   color: var(--textSecond-color, #FFF);
 }
 

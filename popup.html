@@ -84,18 +84,24 @@
   </style>
 </head>
 <body>
-  <button class="item" id="toggle">暂时禁用手势</button>
-  <button class="item" id="settings">打开设置</button>
+  <div class="row">
+    <label>启用手势</label>
+    <label class="switch">
+      <input type="checkbox" id="gestureEnabled" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
   <div class="state" id="state"></div>
+  <button class="item" id="settings">打开设置</button>
 
   <div class="sep"></div>
   <div class="section-title">框选链接（Snap Links）</div>
   <div class="row">
-    <label for="lsEnabled">启用框选</label>
-    <span class="switch">
-      <input type="checkbox" id="lsEnabled">
+    <label>启用框选</label>
+    <label class="switch">
+      <input type="checkbox" id="lsEnabled" checked>
       <span class="slider"></span>
-    </span>
+    </label>
   </div>
   <div class="row">
     <label for="lsModifier">触发键</label>

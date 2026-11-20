@@ -12,16 +12,15 @@
   Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 </p>
 <hr>
-<p>
-  <strong data-i18n="aboutContributors"></strong>
-  <a target="_blank" href="https://github.com/Robbendebiene/Gesturefy/graphs/contributors">Github</a>,
-  <a target="_blank" href="https://crowdin.com/project/gesturefy">Crowdin</a>
+<p class="justify-text">
+  <strong>挥动 (Huidong)</strong> 是基于 Gesturefy 的分支版本，由 ksmao 修改维护。
+  <br>上游 Gesturefy 版权归 <a target="_blank" href="https://github.com/Robbendebiene/Gesturefy/graphs/contributors">Robbendebiene 及贡献者</a> 所有，按 GNU GPLv3 授权。
 </p>
 <hr>
 <ul class="horizontal-list">
-  <li><a target="_blank" href="https://github.com/Robbendebiene/Gesturefy/issues" data-i18n="aboutLinkBug"></a></li>
-  <li><a target="_blank" href="https://github.com/Robbendebiene/Gesturefy" data-i18n="aboutLinkCode"></a></li>
-  <li><a target="_blank" href="https://addons.mozilla.org/firefox/addon/gesturefy/" data-i18n="aboutLinkAddon"></a></li>
+  <li><a target="_blank" href="https://github.com/highwindmx/huidong/issues" data-i18n="aboutLinkBug"></a></li>
+  <li><a target="_blank" href="https://github.com/highwindmx/huidong" data-i18n="aboutLinkCode"></a></li>
+  <li><a target="_blank" href="https://github.com/highwindmx/huidong" >项目主页</a></li>
 </ul>
 <hr>
 <div class="align-content-right">

@@ -336,7 +336,7 @@
     "description": "Add-on page"
   },
   "aboutRestoreNotificationNoConfigFile": {
-    "message": "所选的文件不是有效的 Gesturefy 配置文件",
+    "message": "所选的文件不是有效的挥动配置文件",
     "description": "The selected file is not a valid Gesturefy config file."
   },
   "aboutRestoreNotificationWrongFile": {

@@ -252,7 +252,7 @@ a[target="_blank"]::after {
 }
 
 #commandsPanel.search-visible #commandsSearchButton {
-  color: var(--highlighted-color, #00AAA0);
+  color: var(--highlighted-color, #6B4FD8);
 }
 
 #settingsBackButton {
@@ -461,9 +461,9 @@ a[target="_blank"]::after {
 #settingsSaveButton {
   margin: auto 30px 20px 30px;
   padding: 8px 6px 6px 6px;
-  border: 1px solid var(--highlighted-color, #00AAA0);
+  border: 1px solid var(--highlighted-color, #6B4FD8);
   border-radius: 3px;
-  background: var(--highlighted-color, #00AAA0);
+  background: var(--highlighted-color, #6B4FD8);
   color: var(--textSecond-color);
   text-align: center;
   cursor: pointer;
@@ -512,8 +512,8 @@ a[target="_blank"]::after {
 }
 
 .toggle-button:checked {
-  border-color: var(--highlighted-color, #00AAA0);
-  background: var(--highlighted-color, #00AAA0);
+  border-color: var(--highlighted-color, #6B4FD8);
+  background: var(--highlighted-color, #6B4FD8);
   color: var(--textSecond-color, #FFF);
 }
 

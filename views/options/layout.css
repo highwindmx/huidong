@@ -26,7 +26,7 @@
   --borderImage-Color: url("/resources/img/dashed_border_gray.png");
   --shadow-color: #ddd;
   --shadowSecond-color:rgba(0,0,0,0.15);
-  --highlighted-color: #00AAA0;
+  --highlighted-color: #6B4FD8;
   --warning-color: #FF6347;
 }
 
@@ -44,7 +44,7 @@
   --borderImage-Color: url("/resources/img/dashed_border_dark.png");
   --shadow-color: #464e5e;
   --shadowSecond-color: rgba(200,200,200, 0.15);
-  --highlighted-color: #00AAA0;
+  --highlighted-color: #6B4FD8;
   --warning-color: #FF6347;
 }
 
@@ -480,8 +480,8 @@ h2 {
 }
 
 .toggle-button:checked {
-  border-color: var(--highlighted-color, #00AAA0);
-  background: var(--highlighted-color, #00AAA0);
+  border-color: var(--highlighted-color, #6B4FD8);
+  background: var(--highlighted-color, #6B4FD8);
   color: var(--textSecond-color, #FFF);
 }
 

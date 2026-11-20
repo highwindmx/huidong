@@ -336,7 +336,7 @@
     "description": "Add-on page"
   },
   "aboutRestoreNotificationNoConfigFile": {
-    "message": "The selected file is not a valid Gesturefy config file.",
+    "message": "The selected file is not a valid Huidong config file.",
     "description": "The selected file is not a valid Gesturefy config file."
   },
   "aboutRestoreNotificationWrongFile": {

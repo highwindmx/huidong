@@ -632,7 +632,7 @@ function mouseGestureControllerSetup () {
     canvasContext.lineCap = "round";
     canvasContext.lineJoin = "round";
     canvasContext.lineWidth = 10;
-    canvasContext.strokeStyle = "#00aaa0";
+    canvasContext.strokeStyle = "#6b4fd8";
 
     // get first event and remove it from the array
     const firstEvent = events.shift();
