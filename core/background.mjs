@@ -232,11 +232,7 @@ browser.runtime.onInstalled.addListener((details) => {
 
     switch (details.reason) {
       case "install":
-        // show installation onboarding page
-        browser.tabs.create({
-          url: browser.runtime.getURL("/views/installation/index.html"),
-          active: true
-        });
+        // Huidong fork: no onboarding/welcome tab on installation.
       break;
 
       case "update":

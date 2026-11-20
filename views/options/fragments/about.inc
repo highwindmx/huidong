@@ -17,6 +17,11 @@
   <br>上游 Gesturefy 版权归 <a target="_blank" href="https://github.com/Robbendebiene/Gesturefy/graphs/contributors">Robbendebiene 及贡献者</a> 所有，按 GNU GPLv3 授权。
 </p>
 <hr>
+<p class="justify-text">
+  <strong>鸣谢</strong>
+  <br>站在巨人的肩膀上：鼠标手势核心源自 <a target="_blank" href="https://github.com/Robbendebiene/Gesturefy">Gesturefy</a>（Robbendebiene，GPL-3.0）；框选批量打开链接的功能受 <a target="_blank" href="https://addons.mozilla.org/firefox/addon/snaplinksplus/">Snap Links / Snap Links Plus</a>（Clint Priest，MIT）启发。感谢两位作者及所有开源贡献者。
+</p>
+<hr>
 <ul class="horizontal-list">
   <li><a target="_blank" href="https://github.com/highwindmx/huidong/issues" data-i18n="aboutLinkBug"></a></li>
   <li><a target="_blank" href="https://github.com/highwindmx/huidong" data-i18n="aboutLinkCode"></a></li>
