@@ -18,7 +18,6 @@
       .state { color: #aaa !important; }
       .sep { background: rgba(255,255,255,.14) !important; }
       select { background: #3a3a3a !important; color: #f2f2f2 !important; border-color: #555 !important; }
-      .section-title { color: #9aa0ff !important; }
     }
     .item {
       display: block;
@@ -35,13 +34,6 @@
     .item:active { background: rgba(0,0,0,.12); }
     .sep { height: 1px; margin: 4px 8px; background: rgba(0,0,0,.12); }
     .state { padding: 2px 16px 8px; font-size: 11px; color: #777; }
-    .section-title {
-      padding: 8px 16px 4px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #6b4fd8;
-      letter-spacing: .03em;
-    }
     .row {
       display: flex;
       align-items: center;
@@ -80,7 +72,6 @@
     }
     .switch input:checked + .slider { background: #6b4fd8; }
     .switch input:checked + .slider::before { transform: translateX(14px); }
-    .hint { padding: 2px 16px 8px; font-size: 10px; color: #999; }
   </style>
 </head>
 <body>
@@ -95,9 +86,8 @@
   <button class="item" id="settings">打开设置</button>
 
   <div class="sep"></div>
-  <div class="section-title">框选链接（Snap Links）</div>
   <div class="row">
-    <label>启用框选</label>
+    <label>启用框选链接</label>
     <label class="switch">
       <input type="checkbox" id="lsEnabled" checked>
       <span class="slider"></span>
@@ -120,8 +110,6 @@
       <option value="copy">复制链接</option>
     </select>
   </div>
-  <div class="hint">按住触发键拖动鼠标框选，松开后批量处理框中链接</div>
-
   <script src="popup.js"></script>
 </body>
 </html>
