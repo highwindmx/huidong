@@ -193,16 +193,4 @@
       </div>
     </div>
   </section>
-
-  <section class="ol-section">
-    <div class="ol-item">
-      <div class="ol-label">
-        <p data-i18n="settingLabelUpdateNotification" class="ol-name"></p>
-        <p data-i18n="settingDescriptionUpdateNotification" class="ol-description"></p>
-      </div>
-      <div class="ol-input">
-        <input data-config="Settings.General.updateNotification" class="toggle-button" type="checkbox">
-      </div>
-    </div>
-  </section>
 </div>

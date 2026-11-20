@@ -30,7 +30,7 @@ The resulting `core/bundle/content.bundle.js` is byte-identical to the one shipp
 
 - `core/content.mjs` — added `gfTempDisabled` state/disable branch and link-selection (snap links) wiring
 - `core/background.mjs` — badge sync + `openSelectedLinks` bulk-open handler
-- `manifest.json` — `default_popup`, `clipboardWrite` permission, name "挥动", id `ksmao.work@outlook.com`, version 1.1
+- `manifest.json` — `default_popup`, `clipboardWrite` permission, name "挥动", id `ksmao.work@outlook.com`, version 1.2
 - `popup.html`, `popup.js` — action menu + snap-links config (toggle / modifier / open mode)
 - `core/controllers/link-selector-controller.mjs` — NEW: modifier + left-drag selection state machine
 - `core/views/link-selection-view/link-selection-view.mjs` — NEW: selection rectangle + link highlight + URL collection

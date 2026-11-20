@@ -13,7 +13,7 @@
 </p>
 <hr>
 <p class="justify-text">
-  <strong>挥动 (Huidong)</strong> 是基于 Gesturefy 的分支版本，由 ksmao 修改维护。
+  <strong>挥动 (Huidong)</strong> 是基于 Gesturefy 的分支版本，由 骑大象的阿波罗 维护。
   <br>上游 Gesturefy 版权归 <a target="_blank" href="https://github.com/Robbendebiene/Gesturefy/graphs/contributors">Robbendebiene 及贡献者</a> 所有，按 GNU GPLv3 授权。
 </p>
 <hr>

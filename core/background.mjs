@@ -215,39 +215,14 @@ browser.storage.onChanged.addListener((changes, area) => {
 
 /**
  * Listen for addon installation and update
- * Show onboarding page on installation
- * Display notification and show github releases changelog on click
+ * Enable context menu on mouseup
+ * Huidong fork: no welcome tab and no update notification
  **/
-browser.runtime.onInstalled.addListener((details) => {
-  // enable context menu on mouseup
+browser.runtime.onInstalled.addListener(() => {
   try {
     browser.browserSettings.contextMenuShowEvent.set({value: "mouseup"});
   }
   catch (error) {
-    console.warn("Gesturefy was not able to change the context menu behaviour to mouseup.", error);
+    console.warn("Huidong was not able to change the context menu behaviour to mouseup.", error);
   }
-
-  // run this code after the config is loaded
-  Config.loaded.then(() => {
-
-    switch (details.reason) {
-      case "install":
-        // Huidong fork: no onboarding/welcome tab on installation.
-      break;
-
-      case "update":
-        // show update notification
-        if (Config.get("Settings.General.updateNotification")) {
-          // get manifest for new version number
-          const manifest = browser.runtime.getManifest();
-          // show update notification and open changelog on click
-          displayNotification(
-            browser.i18n.getMessage('addonUpdateNotificationTitle', manifest.name),
-            browser.i18n.getMessage('addonUpdateNotificationMessage', manifest.version),
-            "https://github.com/Robbendebiene/Gesturefy/releases"
-          );
-        }
-      break;
-    }
-  });
 });
